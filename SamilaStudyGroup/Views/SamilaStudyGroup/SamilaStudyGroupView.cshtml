@@ -1,0 +1,41 @@
+﻿@* Interface Enumarable = Enumerate or list *@
+
+@model IEnumerable<SamilaStudyGroup.Models.SamilaStudyGroup>
+@{
+    ViewBag.Title = "Samila's Study Group";
+}
+
+<h2>Samila's Study Group</h2>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+    }
+
+    th, td {
+        border: 1px solid black; 
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+<table class= "samila-study-group">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+        <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
+    </tr>
+
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.StudentNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Surname) </td>
+                    <td>@Html.DisplayFor(modelItem => item.EmailAddress) </td>
+                </tr>
+            }
+</table>
+
